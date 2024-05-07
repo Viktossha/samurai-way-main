@@ -1,0 +1,16 @@
+.friends {
+    display: flex;
+    gap: 10px;
+}
+
+.friend {
+
+}
+
+.friend img {
+    width: 50px;
+}
+
+.friendName {
+    text-align: center;
+}

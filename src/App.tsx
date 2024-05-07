@@ -10,6 +10,8 @@ import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
 import {PostsType} from "./components/Profile/MyPosts/MyPosts";
 import {message} from "antd";
+import {Friends, FriendsType} from "./components/Friends/Friends";
+import {FriendsSidebar} from "./components/FriendsSidebar/FriendsSidebar";
 
 type AppPropsType = {
     state: {
@@ -20,6 +22,9 @@ type AppPropsType = {
             dialogs: Array<DialogsType>
             messages: Array<MessagesType>
         }
+        sidebar: {
+            friends: Array<FriendsType>
+        }
     }
 }
 
@@ -28,15 +33,12 @@ function App(props: AppPropsType) {
         <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
-                <Navbar/>
+                <Navbar state={props.state.sidebar}/>
                 <div className='app-wrapper-content'>
                     {/*<Route path='/dialogs' component={Dialogs}/>*/}
                     {/*<Route path='/profile' component={Profile}/>*/}
                     <Route path='/profile' render={() => <Profile state={props.state.profilePage} />}/>
                     <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
-                    <Route path='/news' component={News}/>
-                    <Route path='/music' component={Music}/>
-                    <Route path='/settings' component={Settings}/>
                 </div>
             </div>
         </BrowserRouter>

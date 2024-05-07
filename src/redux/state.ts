@@ -17,6 +17,13 @@ let state = {
             {id: 2, message: 'Hi'},
             {id: 3, message: 'How are you'},
         ]
+    },
+    sidebar: {
+        friends: [
+            {id: 1, avatar: 'https://cdn-icons-png.flaticon.com/512/3781/3781973.png', name: 'Varvara'},
+            {id: 2, avatar: 'https://e7.pngegg.com/pngimages/674/524/png-clipart-professional-computer-icons-avatar-job-avatar-heroes-computer.png', name: 'Elena'},
+            {id: 3, avatar: 'https://e7.pngegg.com/pngimages/270/98/png-clipart-avatar-computer-icons-likengo-%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6-avatars-logo-illustrator.png', name: 'Misha'},
+        ]
     }
 }
 
