@@ -10,6 +10,7 @@ export type PostsType = {
 
 type MyPostsPropsType = {
     posts: Array<PostsType>
+    addPost: (postText: string) => void
 }
 
 export const MyPosts = (props: MyPostsPropsType) => {
@@ -19,7 +20,7 @@ export const MyPosts = (props: MyPostsPropsType) => {
     let newPostElement:  RefObject<HTMLTextAreaElement>  = React.createRef()
     let addPost = () => {
         let text = newPostElement.current?.value
-        alert(text)
+        if (text) props.addPost(text)
     }
 
     return (
