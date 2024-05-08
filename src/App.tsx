@@ -12,6 +12,7 @@ import {PostsType} from "./components/Profile/MyPosts/MyPosts";
 import {message} from "antd";
 import {Friends, FriendsType} from "./components/Friends/Friends";
 import {FriendsSidebar} from "./components/FriendsSidebar/FriendsSidebar";
+import {addPost} from "./redux/state";
 
 type AppPropsType = {
     state: {
@@ -37,7 +38,7 @@ function App(props: AppPropsType) {
                 <div className='app-wrapper-content'>
                     {/*<Route path='/dialogs' component={Dialogs}/>*/}
                     {/*<Route path='/profile' component={Profile}/>*/}
-                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} />}/>
+                    <Route path='/profile' render={() => <Profile state={props.state.profilePage} addPost={addPost}/>}/>
                     <Route path='/dialogs' render={() => <Dialogs state={props.state.dialogsPage} />}/>
                 </div>
             </div>
