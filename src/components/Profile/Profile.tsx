@@ -1,12 +1,11 @@
 import React from 'react';
 import classes from './Profile.module.css'
-import {MyPosts, PostsType} from "./MyPosts/MyPosts";
+import {MyPosts} from "./MyPosts/MyPosts";
 import {ProfileInfo} from "./MyPosts/ProfileInfo/ProfileInfo";
+import {ProfilePageType} from "../../redux/state";
 
 type ProfilePropsType = {
-    state: {
-        posts: Array<PostsType>
-    }
+    state: ProfilePageType
     addPost: (postText: string) => void
 }
 

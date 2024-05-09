@@ -2,12 +2,10 @@ import React from 'react';
 import classes from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 import {FriendsSidebar} from "../FriendsSidebar/FriendsSidebar";
-import {FriendsType} from "../Friends/Friends";
+import {SidebarType} from "../../redux/state";
 
 type NavbarPropsType = {
-    state: {
-        friends: Array<FriendsType>
-    }
+    state: SidebarType
 }
 
 export const Navbar = (props: NavbarPropsType) => {

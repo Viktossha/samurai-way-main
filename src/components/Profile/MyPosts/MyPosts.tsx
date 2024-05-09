@@ -1,12 +1,7 @@
 import React, {LegacyRef, RefObject} from 'react';
 import classes from './MyPosts.module.css'
 import {Post} from "./Post/Post";
-
-export type PostsType = {
-    id: number
-    message: string
-    likesCounts: number
-}
+import {PostsType} from "../../../redux/state";
 
 type MyPostsPropsType = {
     posts: Array<PostsType>

@@ -1,12 +1,10 @@
 import React from 'react';
-import {FriendsType} from "../Friends/Friends";
 import classes from "../FriendsSidebar/FriendsSidebar.module.css";
 import {NavLink} from "react-router-dom";
+import {SidebarType} from "../../redux/state";
 
 type FriendsSidebarPropsType = {
-    state: {
-        friends: Array<FriendsType>
-    }
+    state: SidebarType
 }
 
 export const FriendsSidebar = (props: FriendsSidebarPropsType) => {
