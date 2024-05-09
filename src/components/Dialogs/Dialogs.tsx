@@ -1,18 +1,9 @@
-import React from 'react';
+import React, {RefObject} from 'react';
 import classes from './Dialogs.module.css'
 import {NavLink} from "react-router-dom";
 import {DialogItem} from "./DialogItem/DialogItem";
-import {Message} from "./Message/Message";  //импортируем объект
-
-export type DialogsType = {
-    id: number
-    name: string
-}
-
-export type MessagesType = {
-    id: number
-    message: string
-}
+import {Message} from "./Message/Message";
+import {DialogsType, MessagesType} from "../../redux/state";
 
 type DialogsPropsType = {
     state: {
@@ -27,6 +18,12 @@ export const Dialogs = (props: DialogsPropsType) => {
 
     let messagesElements = props.state.messages.map(m => <Message message={m.message}/>)
 
+    let newMessage:RefObject<HTMLTextAreaElement> = React.createRef()
+    let addMessage = () => {
+        let text = newMessage.current?.value
+        alert(text)
+    }
+
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
@@ -34,6 +31,10 @@ export const Dialogs = (props: DialogsPropsType) => {
             </div>
             <div className={classes.messages}>
                 {messagesElements}
+                <textarea ref={newMessage}></textarea>
+                <div>
+                    <button onClick={addMessage}>Send message</button>
+                </div>
             </div>
         </div>
     );

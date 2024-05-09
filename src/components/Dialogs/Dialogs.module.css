@@ -19,6 +19,14 @@
     padding: 10px;
 }
 
+.messages img {
+    width: 50px;
+}
+
 .message {
     padding: 5px;
+}
+
+.messageAvatar {
+
 }
