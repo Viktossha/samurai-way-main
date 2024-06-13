@@ -10,7 +10,7 @@ import {Music} from "./components/Music/Music";
 import {Settings} from "./components/Settings/Settings";
 import {message} from "antd";
 import {FriendsSidebar} from "./components/FriendsSidebar/FriendsSidebar";
-import {addPost} from "./redux/state";
+import {addPost, updateNewPostText} from "./redux/state";
 import state from "./redux/state";
 
 
@@ -23,7 +23,7 @@ function App() {
                 <div className='app-wrapper-content'>
                     {/*<Route path='/dialogs' component={Dialogs}/>*/}
                     {/*<Route path='/profile' component={Profile}/>*/}
-                    <Route path='/profile' render={() => <Profile state={state.profilePage} addPost={addPost}/>}/>
+                    <Route path='/profile' render={() => <Profile profilePage={state.profilePage} addPost={addPost} updateNewPostText={updateNewPostText}/>}/>
                     <Route path='/dialogs' render={() => <Dialogs state={state.dialogsPage} />}/>
                 </div>
             </div>
